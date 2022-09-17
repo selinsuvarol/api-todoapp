@@ -8,7 +8,6 @@ const Footer = () => {
             display: "flex",
             alignItems:"center",
             justifyContent:"space-between",
-            border: "1px solid black",
             width: "100vw",
             bottom: "0",
             height: "50px",
