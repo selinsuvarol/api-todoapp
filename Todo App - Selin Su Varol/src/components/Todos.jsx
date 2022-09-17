@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import SingleTodo from "./singleTodo";
 import { Button, TextField } from "@mui/material";
 
@@ -87,7 +88,7 @@ const Todos = () => {
                     <SingleTodo todo={todo} />
                 ))}
             </main>
-            
+         <Footer />
         </div>
     );
 };
