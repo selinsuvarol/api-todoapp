@@ -18,6 +18,8 @@ export default function Nav() {
           height: "100%",
         }}>
           <Typography variant="h4" component="div" sx={{ fontFamily: "Nabla", marginLeft: "10px" }}>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="react" 
+              style={{height:"40px", marginRight: "10px"}}></img>
             To-do App
           </Typography>
           <Typography variant="h6" component="div" 
