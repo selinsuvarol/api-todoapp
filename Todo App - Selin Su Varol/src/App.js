@@ -1,22 +1,22 @@
-import * as React from 'react';
+import React, { useState } from "react";
 import './App.css';
 import Login from './components/Login';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Todos from './components/Todos';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-const theme = createMuiTheme({
-  typography: {
-    fontFamily: [
-      'Nabla',
-    ].join(','),
-  },});
 
 function App() {
+  const [username, setUsername] = useState("");
+
   return (
-    <ThemeProvider theme={theme}>
       <div className="App">
-        <Login/>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Login setUsername={setUsername} username={username}/>} />
+          <Route path="/todos" element={<Todos />} />
+        </Routes>
+      </Router>
       </div>
-    </ThemeProvider>
   );
 }
 

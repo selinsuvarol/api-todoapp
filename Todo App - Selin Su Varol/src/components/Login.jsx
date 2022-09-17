@@ -8,7 +8,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { fontFamily } from '@mui/system';
+import { useNavigate } from "react-router-dom";
+
 
 function Copyright(props) {
   return (
@@ -25,14 +26,16 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignInSide() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      name: data.get('name'),
-      password: data.get('password'),
-    });
+export default function SignInSide({setUsername, username}) {
+  const navigate = useNavigate();
+  const handleSubmit = async e => {
+    e.preventDefault();
+    // set the state of the user
+    setUsername(username)
+    // store the user in localStorage
+    localStorage.setItem('username', username)
+    console.log(username)
+    navigate('/todos')
   };
 
   return (
@@ -63,13 +66,27 @@ export default function SignInSide() {
               alignItems: 'center',
             }}
           >
-            <Typography component="h1" variant="h3" sx={{color: "orange", mt: "20%"}}>
-              Welcome to Todo App !
+            <Typography component="h1"
+            sx={{
+                color: "orange",
+                mt: "20%",
+                fontFamily: "Nabla",
+                wordWrap: "wrap",
+                maxWidth: "60%",
+                paddingBottom: "10%",
+                fontSize: "4rem",
+                }}>
+              welcome!
             </Typography>
-            <Typography component="h1" variant="h4">
-              Please enter your name below.
+            <Typography
+                component="h5"
+                sx={{
+                    color: "coral",
+                    fontSize: "1.2rem",
+                }}>
+                please enter your name
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 10 }}>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 5}}>
               <TextField
                 margin="normal"
                 required
@@ -78,13 +95,14 @@ export default function SignInSide() {
                 label="Your Name"
                 name="name"
                 autoComplete="name"
+                onChange= {e => setUsername(e.target.value)}
                 autoFocus
               />
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2, bgcolor: "crimson" }}
               >
                 Sign In
               </Button>
