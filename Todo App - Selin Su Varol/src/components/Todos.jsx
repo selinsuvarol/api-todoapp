@@ -15,6 +15,7 @@ const Todos = () => {
         });
     }, []);
     const addTodo = () => {
+        newTodo.length < 3 ? alert("Please enter at least 3 characters") : 
         fetch(`https://631322eda8d3f673ffc4fe06.mockapi.io/todos`, {
             method: "POST",
             headers: {
@@ -65,6 +66,7 @@ const Todos = () => {
                     }}>
                 <TextField 
                 fullWidth
+                required
                 color= "warning"
                 focused 
                 id="outlined-basic" 
@@ -72,9 +74,7 @@ const Todos = () => {
                 placeholder="type here"
                 name={newTodo}
                 variant="outlined"
-                style={{
-                
-                }}
+                minCharacters={3}
                 onChange={(e)=>{setNewTodo(e.target.value)}} />
                 <Button 
                     variant="contained" 
