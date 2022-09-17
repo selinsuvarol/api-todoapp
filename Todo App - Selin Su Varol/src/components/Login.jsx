@@ -119,7 +119,7 @@ export default function SignInSide({setUsername, username}) {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2, bgcolor: "crimson" }}
+                sx={{ mt: 3, mb: 2, bgcolor: "#043A02" }}
               >
                 Sign In
               </Button>
