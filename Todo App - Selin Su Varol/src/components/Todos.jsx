@@ -34,25 +34,27 @@ const Todos = () => {
     return (
         <div>
             <Nav />
-            <main style={{padding: "20px", maxWidth:"60%"}}>
-                <h1 style={{textAlign: "left", textTransform:"uppercase"}}>{localStorage.getItem("username")}'s To-Do List</h1>
+            <main style={{padding: "40px", maxWidth:"90%"}}>
+                <h2 style={{textAlign: "left", textTransform:"uppercase", color:"coral"}}>{localStorage.getItem("username")}'s To-Do List</h2>
                 <div 
                 style={{
-                    backgroundColor: "peachpuff",
+                    backgroundColor: "coral",
                     textAlign:"center",
                     display: "flex",
                     alignItems:"center",
                     justifyContent:"space-around",
                     gap: "40px",
                     width: "100%",
-                    padding: "20px",
+                    borderRadius: "30px 30px 0 0",
+                    padding: "10px",
                     textTransform: "uppercase",
-                    color: "black",
+                    color: "white",
+                    marginBottom: "20px"
                     }}>
-                    <h3>To-do Name</h3>
-                    <h3>Status</h3>
-                    <h3>Update</h3>
-                    <h3>Action</h3>
+                    <h4>To-do Name</h4>
+                    <h4>Status</h4>
+                    <h4>Update</h4>
+                    <h4>Action</h4>
                 </div>
                 <div style={{
                     textAlign:"center",
@@ -60,7 +62,7 @@ const Todos = () => {
                     alignItems:"center",
                     justifyContent:"space-between",
                     gap: "40px",
-                    padding: "20px",
+                    padding: "10px",
                     textTransform: "uppercase",
                     color: "black",
                     width: "100%",

@@ -65,10 +65,12 @@ const SingleTodo = ({todo}) => {
              gap: "40px",
              padding: "20px",
              width: "100%",
-             borderBottom: "1px solid orange",
+             border: "2px dotted coral",
+             marginTop: "10px",
+             color: "coral",
              }}>
-            <h3>{todo.content}</h3>
-            <h3>{todo.isCompleted===false ?"not completed":"completed"}</h3>
+            <h4>{todo.content}</h4>
+            <h4>{todo.isCompleted===false ?"not completed":"completed"}</h4>
             {todo.isCompleted===false ? 
             <Button 
             variant="contained" 
