@@ -1,14 +1,19 @@
 import { Button } from "@mui/material";
 import React from "react";
 
-const SingleTodo = ({ todo, setNewTodo,newTodo }) => {
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const SingleTodo = ({todo}) => {
     const deleteTodo = () => {
         fetch(`https://631322eda8d3f673ffc4fe06.mockapi.io/todos/${todo.id}`, {
             method: "DELETE",
         }).then(() => {
-            window.location.reload()
-        });
+            toast("To-do deleted succesfully!")
+            setTimeout(() => {
+                window.location.reload()
+            }
+            , 2000)
+        })
     };
 
     const uncomplete = () =>{
@@ -39,6 +44,18 @@ const SingleTodo = ({ todo, setNewTodo,newTodo }) => {
     }
     
     return (
+        <>
+        <ToastContainer
+            position="top-right"
+            hideProgressBar={false}
+            autoClose={2000}
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+        />
         <div id={todo.id} 
         style={{
             textAlign:"center",
@@ -70,6 +87,7 @@ const SingleTodo = ({ todo, setNewTodo,newTodo }) => {
             color="error"
             onClick={deleteTodo}>Delete</Button>
         </div>
+        </>
     );
     }
 

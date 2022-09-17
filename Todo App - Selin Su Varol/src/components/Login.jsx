@@ -9,6 +9,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Copyright(props) {
@@ -34,12 +36,26 @@ export default function SignInSide({setUsername, username}) {
     setUsername(username)
     // store the user in localStorage
     localStorage.setItem('username', username)
-    console.log(username)
-    navigate('/todos')
+    toast("Logged in succesfully!, redirecting")
+    setTimeout(() => {
+      navigate("/todos")
+    }
+    , 3000)
   };
 
   return (
     <ThemeProvider theme={theme}>
+      <ToastContainer
+            position="top-right"
+            hideProgressBar={false}
+            autoClose={3000}
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+        />
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
