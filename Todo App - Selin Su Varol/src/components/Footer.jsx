@@ -16,7 +16,7 @@ const Footer = () => {
             color: "white",
         }}>
             <h5 style={{padding:"40px"}}>© 2022 Selin Su Varol</h5>
-            <div style={{display: "flex", alignItems:"center", height:"100%", border:"2px yellow solid"}}>
+            <div style={{display: "flex", alignItems:"center", height:"100%"}}>
                 <EmailIcon></EmailIcon>
                 <h5 style={{padding:"40px"}}><a href="mailto:selinsuvarol@gmail.com" style={{textDecoration: "none", color:"white"}}>
             email me</a></h5>
