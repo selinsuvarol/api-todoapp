@@ -64,8 +64,7 @@ const SingleTodo = ({todo}) => {
              justifyContent:"space-around",
              gap: "40px",
              padding: "20px",
-             width: "100%",
-             border: "2px dotted coral",
+             borderBottom: "2px dotted coral",
              marginTop: "10px",
              color: "coral",
              }}>

@@ -34,28 +34,27 @@ const Todos = () => {
     return (
         <div>
             <Nav />
-            <main style={{padding: "40px", maxWidth:"90%"}}>
+            <main style={{padding: "40px"}}>
                 <h2 style={{textAlign: "left", textTransform:"uppercase", color:"coral"}}>{localStorage.getItem("username")}'s To-Do List</h2>
-                <div 
-                style={{
-                    backgroundColor: "coral",
-                    textAlign:"center",
-                    display: "flex",
-                    alignItems:"center",
-                    justifyContent:"space-around",
-                    gap: "40px",
-                    width: "100%",
-                    borderRadius: "30px 30px 0 0",
-                    padding: "10px",
-                    textTransform: "uppercase",
-                    color: "white",
-                    marginBottom: "20px"
-                    }}>
-                    <h4>To-do Name</h4>
-                    <h4>Status</h4>
-                    <h4>Update</h4>
-                    <h4>Action</h4>
-                </div>
+                <div style={{ display:"flex", flexDirection:"column", marginBottom:"40px"}}>
+                    <div 
+                    style={{
+                        backgroundColor: "coral",
+                        textAlign:"center",
+                        display: "flex",
+                        alignItems:"center",
+                        justifyContent:"space-around",
+                        gap: "40px",
+                        borderRadius: "30px 30px 0 0",
+                        textTransform: "uppercase",
+                        color: "white",
+                        marginBottom: "20px",
+                        }}>
+                        <h4>To-do Name</h4>
+                        <h4>Status</h4>
+                        <h4>Update</h4>
+                        <h4>Action</h4>
+                    </div>
                 <div style={{
                     textAlign:"center",
                     display: "flex",
@@ -65,30 +64,31 @@ const Todos = () => {
                     padding: "10px",
                     textTransform: "uppercase",
                     color: "black",
-                    width: "100%",
                     }}>
-                <TextField 
-                fullWidth
-                required
-                color= "warning"
-                focused 
-                id="outlined-basic" 
-                label="Add A New To-Do" 
-                placeholder="type here"
-                name={newTodo}
-                variant="outlined"
-                minCharacters={3}
-                onChange={(e)=>{setNewTodo(e.target.value)}} />
-                <Button 
-                    variant="contained" 
-                    color="warning"
-                    onClick={addTodo}
-                >Add</Button>
+                    <TextField 
+                    fullWidth
+                    required
+                    color= "warning"
+                    focused 
+                    id="outlined-basic" 
+                    label="Add A New To-Do" 
+                    placeholder="type here"
+                    name={newTodo}
+                    variant="outlined"
+                    minCharacters={3}
+                    onChange={(e)=>{setNewTodo(e.target.value)}} />
+                    <Button 
+                        variant="contained" 
+                        color="warning"
+                        onClick={addTodo}
+                    >Add</Button>
                 
                 </div>
                 {todos?.map((todo) => (
                     <SingleTodo todo={todo} />
                 ))}
+                </div>
+
             </main>
          <Footer />
         </div>
