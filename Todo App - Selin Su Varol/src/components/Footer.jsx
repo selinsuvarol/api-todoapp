@@ -1,4 +1,5 @@
 import React from "react";
+import EmailIcon from '@mui/icons-material/Email';
 
 const Footer = () => {
     return (
@@ -14,9 +15,12 @@ const Footer = () => {
             position: "fixed",
             color: "white",
         }}>
-            <h4 style={{padding:"40px"}}>© 2022 Selin Su Varol</h4>
-            <h4 style={{padding:"40px"}}><a href="mailto:selinsuvarol@gmail.com" style={{textDecoration: "none", color:"white"}}>email me</a></h4>
-            
+            <h5 style={{padding:"40px"}}>© 2022 Selin Su Varol</h5>
+            <div style={{display: "flex", alignItems:"center", height:"100%", border:"2px yellow solid"}}>
+                <EmailIcon></EmailIcon>
+                <h5 style={{padding:"40px"}}><a href="mailto:selinsuvarol@gmail.com" style={{textDecoration: "none", color:"white"}}>
+            email me</a></h5>
+            </div>          
         </div>
     )
 }
