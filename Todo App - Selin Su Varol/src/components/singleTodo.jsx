@@ -1,8 +1,11 @@
 import { Button } from "@mui/material";
 import React from "react";
-
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CheckCircle from "@mui/icons-material/CheckCircle";
+import { Icon } from '@mui/material';
+
 const SingleTodo = ({todo}) => {
     const deleteTodo = () => {
         fetch(`https://631322eda8d3f673ffc4fe06.mockapi.io/todos/${todo.id}`, {
@@ -69,7 +72,7 @@ const SingleTodo = ({todo}) => {
              color: "coral",
              }}>
             <h4>{todo.content}</h4>
-            <h4>{todo.isCompleted===false ?"not completed":"completed"}</h4>
+            <h4>{todo.isCompleted===false ? "not completed": (CheckCircleIcon+"completed")}</h4>
             {todo.isCompleted===false ? 
             <Button 
             variant="contained" 
