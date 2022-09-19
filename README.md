@@ -4,6 +4,10 @@
 
 ## Deployed version: <a href="https://patika-selinsuvarol.netlify.app">Here</a>
 
+
+### Note: 
+<p>Head over to the "Todo App - Selin Su Varol" folder and then run <code>npm start</code>.</p>
+
 ### Project Guideline:
 <ul>
   <li>
