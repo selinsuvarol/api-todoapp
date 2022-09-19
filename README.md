@@ -2,7 +2,7 @@
 
 # Popupsmart - Todo List Project - Selin Su Varol
 
-## Deployed version: <a href="https://www.google.com">Here</a>
+## Deployed version: <a href="https://patika-selinsuvarol.netlify.app">Here</a>
 
 ### Project Guideline:
 <ul>
